@@ -13,8 +13,8 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'doc', 'docx',
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Dummy user and superuser data
-USER_DATA = {"moulika": "1234", "harshita": "1234"}  # Regular user
-SUPERUSER_DATA = {"varshith": "1234"}  # Superuser
+USER_DATA = {"testusser": "password1", "testuser2": "password2"}  # Regular user
+SUPERUSER_DATA = {"admin": "adminpassword"}  # Superuser
 
 # Function to check allowed file extensions
 def allowed_file(filename):
