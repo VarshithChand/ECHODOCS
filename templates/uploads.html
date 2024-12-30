@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploads</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='uploads.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Manage Your Files</h1>
+        <a href="{{ dashboard_url }}" class="logout-button">Back to Dashboard</a>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <h2 style="color:black">Upload File</h2>
+                <form method="POST" enctype="multipart/form-data" action="{{ url_for('uploads') }}">
+                    <input type="file" name="file" id="fileInput" style="display: none;" required>
+                    <button type="button" onclick="document.getElementById('fileInput').click()" class="upload-button">Upload File</button>
+                    <input type="submit" id="uploadSubmit" style="display: none;">
+                </form>
+            </div>
+        </div>
+
+        <div class="container" >
+            <div class="section">
+                <h2 style="color:black">Uploaded Files</h2>
+                {% if files %}
+                    <form method="POST" action="{{ url_for('delete_files') }}">
+                        <ul class="file-list">
+                            {% for file in files %}
+                            <li class="file-item">
+                                <input type="checkbox" name="selected_files" value="{{ file }}">
+                                <a href="{{ url_for('serve_file', filename=file) }}" target="_blank">{{ file }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                {% else %}
+                    <p>No files uploaded yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Auto-submit form when a file is selected
+        document.getElementById('fileInput').addEventListener('change', function() {
+            document.getElementById('uploadSubmit').click();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        /* Welcome Page Styles */
+
+        body {
+            background-color: #f0f4f8; /* Include padding and border in element's total width and height */
+            font-family: sans-serif;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #6a11cb; /* Purple header color */
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .logout-button {
+            background-color: #FF5722; /* Orange color */
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .logout-button:hover {
+            background-color: #E64421;
+            transform: translateY(-2px);
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            width: 80%;
+            max-width: 960px;
+            margin: 30px auto;
+        }
+
+        .section-container {
+            flex: 1; /* Make sections occupy equal width */
+            background-color: #fff; /* Light blue background */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .upload-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #6a11cb; /* Blue button color */
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .upload-button:hover {
+            background-color: #2575fc;
+            transform: translateY(-2px);
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .file-item {
+            margin-bottom: 5px;
+        }
+
+        .file-item a {
+            color: #6a00ff; /* Purple color */
+            text-decoration: none;
+        }
+
+        .file-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logout-button {
+                margin-top: 10px;
+            }
+
+            .upload-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <h1>Welcome, {{ username }}!</h1>
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </header>
+
+        <div class="main-container">
+            <div class="section-container">
+                <h2>Upload Document</h2>
+                <button class="upload-button" onclick="location.href='{{ url_for('uploads') }}'">Upload Document</button>
+            </div>
+
+            <div class="section-container">
+                <h2>Uploaded Documents</h2>
+                <div class="file-list">
+                    {% if files %}
+                        {% for file in files %}
+                            <div class="file-item">
+                                <a href="{{ url_for('serve_file', filename=file) }}" target="_blank">{{ file }}</a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No documents uploaded yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

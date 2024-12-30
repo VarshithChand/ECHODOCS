@@ -1,0 +1,183 @@
+/* General Styles */
+
+body{
+    font-family: sans-serif;
+    background-color: #f0f4f8; /* Light gray background */
+    color: #333;
+  }
+  
+  /* Header Styles */
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color:  #6a11cb; /* Blue header color */
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+  }
+  
+  .logout-button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #ff4b2b;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .logout-button:hover {
+    background-color:#e64421;
+    transform: translateY(-2px);
+  }
+  
+  /* Main Content */
+  
+  main {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 0 40px;
+    max-width: 1000px;
+  }
+  
+  /* Container */
+  
+  .container {
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+    margin: 0 auto;
+  }
+  
+  /* Section Styles */
+  
+  .section {
+    background-color: #ffffff; /* Light blue background */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .section:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #6a11cb; /* Darker blue for headings */
+    text-transform: uppercase;
+  }
+  
+  /* Buttons */
+  
+  .upload-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color:  #6a11cb; /* Blue button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .upload-button:hover {
+    background-color:  #2575fc;
+    transform: translateY(-2px);
+  }
+  
+  /* File List */
+  
+  .file-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+  }
+  
+  .file-item {
+    margin-bottom: 15px;
+  }
+  
+  .file-item a {
+    color:  #6a11cb;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .file-item a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .section {
+      width: 100%;
+      padding: 30px;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px;
+    }
+  
+    .logout-button {
+      margin-top: 10px;
+    }
+  
+    .upload-button {
+      padding: 12px 20px;
+      font-size: 0.9rem;
+    }
+  
+    .section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .delete-button{
+    
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff4b2b;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  .delete-button:hover {
+    background-color:#e64421;
+    transform: translateY(-2px);
+  }
+  
