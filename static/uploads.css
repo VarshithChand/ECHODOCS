@@ -13,11 +13,12 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color:  #6a11cb; /* Blue header color */
+    background-color:  #080808; /* Blue header color */
     color: white;
     font-size: 2.5rem;
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 9PX;
   }
   
   header h1 {
@@ -90,7 +91,7 @@ body{
     font-weight: bold;
     text-transform: uppercase;
     color: white;
-    background-color:  #6a11cb; /* Blue button color */
+    background-color:  #060606; /* Blue button color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -98,7 +99,7 @@ body{
   }
   
   .upload-button:hover {
-    background-color:  #2575fc;
+    background-color:  #3c3e42;
     transform: translateY(-2px);
   }
   
@@ -115,7 +116,7 @@ body{
   }
   
   .file-item a {
-    color:  #6a11cb;
+    color:  #0b0a0b;
     font-size: 1rem;
     text-decoration: none;
     font-weight: 500;
@@ -123,7 +124,7 @@ body{
   }
   
   .file-item a:hover {
-    color: #1565c0;
+    color: #363a3e;
     text-decoration: underline;
   }
   
@@ -169,8 +170,8 @@ body{
   .delete-button{
     
     color: white;
-    text-decoration: none;
     font-size: 0.9rem;
+    font-family: sans-serif;
     padding: 10px 20px;
     border-radius: 5px;
     background-color: #ff4b2b;

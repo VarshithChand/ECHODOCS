@@ -2,7 +2,7 @@
 *{
     color: #141415;
     font-family: sans-serif;
-    background:#9a4bf0;
+    background:#0b0b0b;
     justify-content: center;
 }
 h1{
@@ -40,7 +40,7 @@ h1{
 }
 
 button {
-    background-color: #6a11cb;
+    background-color: #0b0b0b;
     color: white;
     padding: 11px 25px;
     border: none;
@@ -52,6 +52,6 @@ button {
 }
 
 button:hover {
-    background-color: #2575fc;
+    background-color: #494b4f;
     transform: translateY(-2px);
 }
